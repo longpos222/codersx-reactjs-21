@@ -14,7 +14,7 @@ const BookList = (props) => {
   };
 
   useEffect(() => {
-    const url = `https://codersx-expressjs-29-1.herokuapp.com/api/books${query === null ? "" : `?q=${query}`}`;
+    const url = `https://5faba92b03a60500167e6ef3.mockapi.io/books${query === null ? "" : `?title=${query}`}`;
     fetch(url, {
       method: "GET",
     })
@@ -28,8 +28,8 @@ const BookList = (props) => {
   const columns = [
     {
       title: "ID",
-      dataIndex: "_id",
-      key: "_id",
+      dataIndex: "id",
+      key: "id",
       align: "center",
     },
     {
@@ -57,7 +57,7 @@ const BookList = (props) => {
       render: () => <Button type="primary">Add to cart</Button>,
     },
   ];
-
+   
   return (
     <div className="book-list">
       <h1>BOOK LIST</h1>
